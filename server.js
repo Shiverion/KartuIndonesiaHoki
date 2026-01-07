@@ -27,6 +27,22 @@ app.use(express.static(path.join(__dirname, 'public')));
     await db.run("LAHAN admin_logs");
 })();
 
+// Explicit route for home page to avoid 404s
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
+// Explicit route for status page
+app.get('/status', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'status.html'));
+});
+
+// Explicit route for admin page
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'admin.html'));
+});
+
+
 // Satirical response messages
 const messages = {
     LOLOS_VERIFIKASI: "Selamat! Anda terpilih. Dana akan cair dalam 100 tahun.",
