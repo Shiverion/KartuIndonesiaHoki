@@ -21,6 +21,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// DEBUG: Log every request
+app.use((req, res, next) => {
+    console.log(`[DEBUG] Incoming Request: ${req.method} ${req.url} | Headers: ${JSON.stringify(req.headers['user-agent'])}`);
+    next();
+});
+
 // Request logging middleware
 app.use((req, res, next) => {
     console.log(`[REQUEST] ${req.method} ${req.url}`);
@@ -273,6 +279,12 @@ app.get('/api/stats', async (req, res) => {
             ditolak: ((stats.ditolak / stats.total_pendaftar) * 100 || 0).toFixed(2) + '%'
         }
     });
+});
+
+// DEBUG: Catch-all 404 handler
+app.use('*', (req, res) => {
+    console.log(`[DEBUG] 404 Hit: ${req.method} ${req.url}`);
+    res.status(404).send(`KARTU INDONESIA HOKI - 404 NOT FOUND (Debug Mode)<br>URL: ${req.url}`);
 });
 
 // Start server (Cloud Run uses PORT env variable)
