@@ -13,13 +13,13 @@ const SawitDB = require('./lib/sawitdb');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const db = new SawitDB('./database.sawit');
+const db = new SawitDB(path.join(__dirname, 'database.sawit'));
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Initialize database tables
 (async () => {
