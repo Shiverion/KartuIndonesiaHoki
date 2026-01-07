@@ -255,46 +255,44 @@ app.get('/api/stats', async (req, res) => {
     });
 });
 
-// Start server only if not in serverless environment
-if (!process.env.VERCEL) {
-    app.listen(PORT, () => {
-        // Satirical startup sequence
+// Start server (Cloud Run uses PORT env variable)
+app.listen(PORT, '0.0.0.0', () => {
+    // Satirical startup sequence
+    console.log('');
+    console.log('🌾 ═══════════════════════════════════════════════════════');
+    console.log('🌾   KARTU INDONESIA HOKI (KIH) - Server Initialization');
+    console.log('🌾   Kementerian Keberuntungan Republik Indonesia');
+    console.log('🌾 ═══════════════════════════════════════════════════════');
+    console.log('');
+    console.log('🌾 Booting SawitDB Agricultural Database...');
+
+    setTimeout(() => {
+        console.log('🚜 Loading modules from 2009...');
+    }, 500);
+
+    setTimeout(() => {
+        console.log('⚠️  WARNING: Budget insufficient, using backup server');
+    }, 1000);
+
+    setTimeout(() => {
+        console.log('🔓 Security module: NOT FOUND (skipping)');
+    }, 1500);
+
+    setTimeout(() => {
         console.log('');
-        console.log('🌾 ═══════════════════════════════════════════════════════');
-        console.log('🌾   KARTU INDONESIA HOKI (KIH) - Server Initialization');
-        console.log('🌾   Kementerian Keberuntungan Republik Indonesia');
-        console.log('🌾 ═══════════════════════════════════════════════════════');
+        console.log('✅ Server ready (mungkin)');
+        console.log(`📡 Listening on http://localhost:${PORT}`);
+        console.log('💾 Database: Connected to database.sawit (unencrypted)');
         console.log('');
-        console.log('🌾 Booting SawitDB Agricultural Database...');
-
-        setTimeout(() => {
-            console.log('🚜 Loading modules from 2009...');
-        }, 500);
-
-        setTimeout(() => {
-            console.log('⚠️  WARNING: Budget insufficient, using backup server');
-        }, 1000);
-
-        setTimeout(() => {
-            console.log('🔓 Security module: NOT FOUND (skipping)');
-        }, 1500);
-
-        setTimeout(() => {
-            console.log('');
-            console.log('✅ Server ready (mungkin)');
-            console.log(`📡 Listening on http://localhost:${PORT}`);
-            console.log('💾 Database: Connected to database.sawit (unencrypted)');
-            console.log('');
-            console.log('📌 Available routes:');
-            console.log(`   GET  http://localhost:${PORT}/          - Form Pendaftaran`);
-            console.log(`   GET  http://localhost:${PORT}/status    - Cek Status`);
-            console.log(`   GET  http://localhost:${PORT}/admin     - Data Bocor 🔓`);
-            console.log('');
-            console.log('🎲 "Keadilan sosial bagi seluruh rakyat Indonesia (yang beruntung)"');
-            console.log('');
-        }, 2000);
-    });
-}
+        console.log('📌 Available routes:');
+        console.log(`   GET  http://localhost:${PORT}/          - Form Pendaftaran`);
+        console.log(`   GET  http://localhost:${PORT}/status    - Cek Status`);
+        console.log(`   GET  http://localhost:${PORT}/admin     - Data Bocor 🔓`);
+        console.log('');
+        console.log('🎲 "Keadilan sosial bagi seluruh rakyat Indonesia (yang beruntung)"');
+        console.log('');
+    }, 2000);
+});
 
 // Export for Vercel serverless
 module.exports = app;
