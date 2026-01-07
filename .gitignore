@@ -29,3 +29,4 @@ build/
 # Misc
 *.bak
 *.tmp
+.vercel
