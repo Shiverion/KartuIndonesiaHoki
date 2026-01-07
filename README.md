@@ -18,7 +18,14 @@ Proyek ini dibuat untuk kritik sosial mengenai:
 
 ---
 
-## 🎲 Cara Kerja
+## � Live Demo
+**[https://kih-app-693635751904.asia-southeast1.run.app](https://kih-app-693635751904.asia-southeast1.run.app)**
+
+*Status: 🟢 Online (Cloud Run)*
+
+---
+
+## �🎲 Cara Kerja
 
 1. Pengguna mengisi form dengan pertanyaan absurd (jumlah genteng, tetangga yang dibenci, dll)
 2. Sistem menggunakan RNG (Gacha) untuk menentukan kelayakan
