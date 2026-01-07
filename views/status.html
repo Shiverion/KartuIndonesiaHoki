@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Status Pendaftaran - Kartu Indonesia Hoki</title>
+    <meta name="description" content="Cek status pendaftaran Kartu Indonesia Hoki Anda">
+
+    <!-- JokoUI Styles -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="joko-header-bar">
+        <div class="container">
+            <div style="display: flex; align-items: center;">
+                <span style="font-size: 48px; margin-right: 15px;">🏛️</span>
+                <div>
+                    <h1>CEK STATUS PENDAFTARAN</h1>
+                    <p class="subtitle">KARTU INDONESIA HOKI - KEMENTERIAN KEBERUNTUNGAN RI</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 30px; padding-bottom: 40px;">
+
+        <!-- Status Check Form -->
+        <div id="status-form-container">
+            <div class="joko-card joko-card-red">
+                <h2 class="text-center mb-3">🔍 CEK STATUS PENDAFTARAN</h2>
+                <p class="text-center text-muted mb-3">
+                    Masukkan nomor pendaftaran untuk melihat status keberuntungan Anda
+                </p>
+
+                <div class="joko-form-group">
+                    <label class="joko-label">
+                        📋 Nomor Pendaftaran
+                    </label>
+                    <input type="text" id="nomor-input" class="joko-input" placeholder="Contoh: KIH-2025-123456">
+                    <p class="joko-helper">Nomor yang Anda terima saat mendaftar</p>
+                </div>
+
+                <button onclick="checkStatus()" class="joko-button joko-button-full mt-2">
+                    🔍 CEK STATUS
+                </button>
+            </div>
+
+            <!-- Info Box -->
+            <div class="joko-alert joko-alert-info">
+                <strong>ℹ️ Info:</strong> Status dapat berubah sewaktu-waktu tanpa pemberitahuan.
+                Kemungkinan data Anda sudah dihapus oleh sistem atau dimakan rayap digital.
+            </div>
+
+            <!-- Back Link -->
+            <div class="text-center mt-3">
+                <a href="/" class="joko-button joko-button-secondary">
+                    ← KEMBALI KE PENDAFTARAN
+                </a>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading-state" class="hidden"></div>
+
+        <!-- Result Container -->
+        <div id="result-container" class="hidden"></div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="joko-footer">
+        <div class="container">
+            <p>Ditenagai oleh <strong>SawitDB</strong> - Infrastruktur Kedaulatan Data</p>
+            <p class="warning-text">⚠️ Data Anda tidak aman dan mungkin bocor sewaktu-waktu</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

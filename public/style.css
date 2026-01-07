@@ -1,0 +1,546 @@
+/**
+ * JokoUI - Framework UI Resmi Pemerintah (Satir)
+ * Style Guide: Boxy, Rigid, Red, "Official"
+ */
+
+/* ===== CSS Variables (JokoUI Design Tokens) ===== */
+:root {
+  --merah-joko: #DC2626;
+  --merah-gelap: #991B1B;
+  --merah-terang: #FEE2E2;
+  --putih-bersih: #FFFFFF;
+  --abu-netral: #F3F4F6;
+  --abu-medium: #D1D5DB;
+  --hitam-tegas: #1F2937;
+  --kuning-peringatan: #FBBF24;
+  --kuning-muda: #FEF3C7;
+  --hijau-sukses: #059669;
+  --hijau-muda: #D1FAE5;
+  --biru-info: #3B82F6;
+  --biru-muda: #DBEAFE;
+  
+  --font-primary: 'Arial', 'Helvetica Neue', sans-serif;
+  --border-thick: 3px;
+  --shadow-harsh: 4px 4px 0px;
+  --shadow-hover: 2px 2px 0px;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--hitam-tegas);
+  background: linear-gradient(135deg, var(--abu-netral) 0%, var(--putih-bersih) 100%);
+  min-height: 100vh;
+}
+
+/* ===== Typography (JokoUI) ===== */
+.joko-header {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+h1 { font-size: 28px; }
+h2 { font-size: 22px; }
+h3 { font-size: 18px; }
+
+/* ===== Layout ===== */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Header (Official Government Style) ===== */
+.joko-header-bar {
+  background: linear-gradient(180deg, var(--merah-joko) 0%, var(--merah-gelap) 100%);
+  color: var(--putih-bersih);
+  padding: 20px 0;
+  border-bottom: 4px solid var(--merah-gelap);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.joko-header-bar h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.joko-header-bar .subtitle {
+  font-size: 12px;
+  opacity: 0.9;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+/* ===== Cards (Boxy Style) ===== */
+.joko-card {
+  background: var(--putih-bersih);
+  border: var(--border-thick) solid var(--hitam-tegas);
+  box-shadow: var(--shadow-harsh) var(--hitam-tegas);
+  padding: 24px;
+  margin: 20px 0;
+}
+
+.joko-card-red {
+  border-color: var(--merah-joko);
+  box-shadow: var(--shadow-harsh) var(--merah-gelap);
+}
+
+.joko-card-warning {
+  background: var(--kuning-muda);
+  border-color: var(--kuning-peringatan);
+  box-shadow: var(--shadow-harsh) #B45309;
+}
+
+/* ===== Form Elements ===== */
+.joko-form-group {
+  margin-bottom: 20px;
+}
+
+.joko-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--hitam-tegas);
+}
+
+.joko-label .required {
+  color: var(--merah-joko);
+}
+
+.joko-helper {
+  font-size: 11px;
+  color: #6B7280;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.joko-input,
+.joko-select,
+.joko-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: var(--font-primary);
+  border: var(--border-thick) solid var(--hitam-tegas);
+  background: var(--putih-bersih);
+  color: var(--hitam-tegas);
+  transition: none; /* No smooth transitions - rigid style */
+}
+
+.joko-input:focus,
+.joko-select:focus,
+.joko-textarea:focus {
+  outline: none;
+  border-color: var(--merah-joko);
+  box-shadow: 0 0 0 2px var(--merah-terang);
+}
+
+.joko-input::placeholder {
+  color: #9CA3AF;
+}
+
+.joko-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.joko-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231F2937' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* ===== Buttons (JokoUI Signature Style) ===== */
+.joko-button {
+  display: inline-block;
+  background: var(--merah-joko);
+  color: var(--putih-bersih);
+  border: var(--border-thick) solid var(--merah-gelap);
+  border-radius: 0px; /* No rounding! */
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: var(--shadow-harsh) var(--merah-gelap);
+  font-family: var(--font-primary);
+  transition: none;
+}
+
+.joko-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-hover) var(--merah-gelap);
+}
+
+.joko-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.joko-button:disabled {
+  background: var(--abu-medium);
+  border-color: #9CA3AF;
+  box-shadow: var(--shadow-harsh) #9CA3AF;
+  cursor: not-allowed;
+}
+
+.joko-button-secondary {
+  background: var(--putih-bersih);
+  color: var(--hitam-tegas);
+  border-color: var(--hitam-tegas);
+  box-shadow: var(--shadow-harsh) var(--hitam-tegas);
+}
+
+.joko-button-success {
+  background: var(--hijau-sukses);
+  border-color: #047857;
+  box-shadow: var(--shadow-harsh) #047857;
+}
+
+.joko-button-full {
+  width: 100%;
+  text-align: center;
+}
+
+/* ===== Result Cards ===== */
+.result-card {
+  padding: 40px;
+  text-align: center;
+  border: 4px solid;
+}
+
+.result-card.rejected {
+  background: var(--merah-terang);
+  border-color: var(--merah-joko);
+}
+
+.result-card.queued {
+  background: var(--kuning-muda);
+  border-color: var(--kuning-peringatan);
+}
+
+.result-card.approved {
+  background: var(--hijau-muda);
+  border-color: var(--hijau-sukses);
+}
+
+.result-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.result-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.result-message {
+  font-size: 16px;
+  color: #4B5563;
+  margin-bottom: 20px;
+}
+
+/* ===== Loading State ===== */
+.loading-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid var(--abu-medium);
+  border-top: 6px solid var(--merah-joko);
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--hitam-tegas);
+  margin-bottom: 10px;
+}
+
+.loading-subtext {
+  font-size: 14px;
+  color: #6B7280;
+}
+
+/* Fake progress bar */
+.progress-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  background: var(--abu-netral);
+  border: 2px solid var(--hitam-tegas);
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--merah-joko) 0%, var(--merah-gelap) 100%);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--hitam-tegas);
+}
+
+/* ===== Alerts & Notices ===== */
+.joko-alert {
+  padding: 16px;
+  border-left: 4px solid;
+  margin: 15px 0;
+  font-size: 13px;
+}
+
+.joko-alert-warning {
+  background: var(--kuning-muda);
+  border-color: var(--kuning-peringatan);
+  color: #92400E;
+}
+
+.joko-alert-danger {
+  background: var(--merah-terang);
+  border-color: var(--merah-joko);
+  color: var(--merah-gelap);
+}
+
+.joko-alert-info {
+  background: var(--biru-muda);
+  border-color: var(--biru-info);
+  color: #1E40AF;
+}
+
+.joko-alert-success {
+  background: var(--hijau-muda);
+  border-color: var(--hijau-sukses);
+  color: #047857;
+}
+
+/* ===== Table (Admin Page) ===== */
+.joko-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: var(--border-thick) solid var(--hitam-tegas);
+  font-size: 12px;
+}
+
+.joko-table th,
+.joko-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border: 1px solid var(--abu-medium);
+}
+
+.joko-table th {
+  background: var(--merah-joko);
+  color: var(--putih-bersih);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.joko-table tr:nth-child(even) {
+  background: var(--abu-netral);
+}
+
+.joko-table tr:hover {
+  background: var(--kuning-muda);
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.lolos {
+  background: var(--hijau-sukses);
+  color: var(--putih-bersih);
+}
+
+.status-badge.antrian {
+  background: var(--kuning-peringatan);
+  color: var(--hitam-tegas);
+}
+
+.status-badge.ditolak {
+  background: var(--merah-joko);
+  color: var(--putih-bersih);
+}
+
+/* ===== Footer ===== */
+.joko-footer {
+  background: var(--hitam-tegas);
+  color: var(--abu-netral);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 40px;
+  border-top: 4px solid var(--merah-joko);
+}
+
+.joko-footer strong {
+  color: var(--merah-joko);
+}
+
+.joko-footer .warning-text {
+  color: var(--kuning-peringatan);
+  margin-top: 8px;
+}
+
+/* ===== Utilities ===== */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+
+.hidden { display: none !important; }
+
+.text-danger { color: var(--merah-joko); }
+.text-success { color: var(--hijau-sukses); }
+.text-warning { color: #B45309; }
+.text-muted { color: #6B7280; }
+
+.bg-striped {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--kuning-muda),
+    var(--kuning-muda) 10px,
+    var(--putih-bersih) 10px,
+    var(--putih-bersih) 20px
+  );
+}
+
+/* ===== Animations ===== */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .joko-header-bar h1 {
+    font-size: 18px;
+  }
+  
+  .joko-card {
+    padding: 16px;
+    margin: 15px 0;
+  }
+  
+  .joko-button {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+  
+  .result-icon {
+    font-size: 60px;
+  }
+  
+  .result-title {
+    font-size: 20px;
+  }
+  
+  .joko-table {
+    font-size: 10px;
+  }
+  
+  .joko-table th,
+  .joko-table td {
+    padding: 6px 8px;
+  }
+}
+
+/* ===== Print Styles (for "official documents") ===== */
+@media print {
+  .joko-header-bar {
+    background: var(--hitam-tegas) !important;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .joko-button {
+    display: none;
+  }
+}

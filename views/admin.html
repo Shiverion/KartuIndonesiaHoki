@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ INTERNAL - Data Pendaftar KIH</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- JokoUI Styles -->
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        .classified-banner {
+            background: repeating-linear-gradient(-45deg,
+                    #FEE2E2,
+                    #FEE2E2 10px,
+                    #FECACA 10px,
+                    #FECACA 20px);
+            padding: 15px;
+            text-align: center;
+            border: 3px solid #DC2626;
+            margin-bottom: 20px;
+        }
+
+        .classified-banner h2 {
+            color: #DC2626;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="joko-header-bar" style="background: linear-gradient(180deg, #1F2937 0%, #111827 100%);">
+        <div class="container-wide">
+            <div style="display: flex; align-items: center;">
+                <span style="font-size: 48px; margin-right: 15px;">⚠️</span>
+                <div>
+                    <h1>PANEL ADMIN - DATA INTERNAL</h1>
+                    <p class="subtitle">JANGAN DISEBARLUASKAN - RAHASIA NEGARA</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container-wide" style="padding-top: 30px; padding-bottom: 40px;">
+
+        <!-- Classified Banner -->
+        <div class="classified-banner">
+            <h2>⚠️ INTERNAL USE ONLY - JANGAN DISEBARLUASKAN ⚠️</h2>
+            <p style="margin: 10px 0 0;">Halaman ini seharusnya memerlukan autentikasi, tapi kami lupa membuatnya.</p>
+        </div>
+
+        <!-- Warning Alert -->
+        <div class="joko-alert joko-alert-danger">
+            <strong>🔓 PERINGATAN KEAMANAN:</strong> Halaman ini dapat diakses oleh siapa saja tanpa login.
+            Semua data PII (Personally Identifiable Information) terekspos.
+            Jika Anda bukan admin, <strike>segera tutup browser</strike> <em>(tapi sebenarnya tidak ada yang
+                peduli)</em>.
+        </div>
+
+        <!-- Statistics -->
+        <div id="stats-container" class="mb-3">
+            <div class="text-center text-muted">Loading statistik...</div>
+        </div>
+
+        <!-- Data Table -->
+        <div class="joko-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 style="margin: 0;">📋 DATA PENDAFTAR</h2>
+                <div>
+                    <button onclick="loadAdminData()" class="joko-button joko-button-secondary"
+                        style="padding: 8px 16px; font-size: 12px;">
+                        🔄 REFRESH
+                    </button>
+                </div>
+            </div>
+
+            <div id="data-container">
+                <div class="text-center text-muted">Loading data...</div>
+            </div>
+        </div>
+
+        <!-- Technical Info -->
+        <div class="joko-card mt-3" style="font-size: 12px;">
+            <h3 class="mb-2">🔧 Informasi Teknis</h3>
+            <table style="width: 100%;">
+                <tr>
+                    <td style="padding: 4px 0;"><strong>Database:</strong></td>
+                    <td>SawitDB Agricultural Database v1.0.0-beta.2009</td>
+                </tr>
+                <tr>
+                    <td style="padding: 4px 0;"><strong>Enkripsi:</strong></td>
+                    <td><span class="text-danger">TIDAK ADA</span></td>
+                </tr>
+                <tr>
+                    <td style="padding: 4px 0;"><strong>Autentikasi:</strong></td>
+                    <td><span class="text-danger">TIDAK ADA</span></td>
+                </tr>
+                <tr>
+                    <td style="padding: 4px 0;"><strong>Firewall:</strong></td>
+                    <td><span class="text-danger">TIDAK ADA</span></td>
+                </tr>
+                <tr>
+                    <td style="padding: 4px 0;"><strong>Backup:</strong></td>
+                    <td><span class="text-warning">Mungkin ada, mungkin tidak</span></td>
+                </tr>
+                <tr>
+                    <td style="padding: 4px 0;"><strong>SSL:</strong></td>
+                    <td><span class="text-danger">HTTP only (tidak aman)</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Footer Warning -->
+        <div class="joko-alert joko-alert-danger mt-3">
+            <p>
+                <strong>⚠️ PERINGATAN:</strong> Halaman ini seharusnya tidak bisa diakses publik.
+                Jika Anda bukan admin, segera tutup browser dan laporkan ke
+                <strike>security</strike> <em>(tidak ada divisi IT)</em>.
+            </p>
+        </div>
+
+        <!-- Back Link -->
+        <div class="text-center mt-3">
+            <a href="/" class="joko-button joko-button-secondary">
+                ← KEMBALI KE HALAMAN UTAMA
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="joko-footer" style="background: #111827;">
+        <div class="container">
+            <p>Ditenagai oleh <strong>SawitDB</strong> - Infrastruktur Kedaulatan Data</p>
+            <p class="warning-text">🔓 Halaman ini adalah simulasi kebocoran data - PROYEK SATIR</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
