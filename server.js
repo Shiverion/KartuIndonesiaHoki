@@ -21,15 +21,33 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Request logging middleware
+app.use((req, res, next) => {
+    console.log(`[REQUEST] ${req.method} ${req.url}`);
+    next();
+});
+
+// Health check endpoint
+app.get('/ping', (req, res) => {
+    res.send('pong');
+});
+
 // Initialize database tables
 (async () => {
     await db.run("LAHAN pendaftar");
     await db.run("LAHAN admin_logs");
 })();
 
-// Explicit route for home page to avoid 404s
+// Explicit route for home page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+    const indexPath = path.join(__dirname, 'views', 'index.html');
+    console.log(`Serve index.html from: ${indexPath}`);
+    res.sendFile(indexPath, (err) => {
+        if (err) {
+            console.error('Error serving index.html:', err);
+            res.status(500).send('Error loading page');
+        }
+    });
 });
 
 // Explicit route for status page
@@ -41,7 +59,6 @@ app.get('/status', (req, res) => {
 app.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'admin.html'));
 });
-
 
 // Satirical response messages
 const messages = {
@@ -82,19 +99,6 @@ function randomDelay() {
 }
 
 // ===== ROUTES =====
-
-// Serve main pages
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'index.html'));
-});
-
-app.get('/status', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'status.html'));
-});
-
-app.get('/admin', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'admin.html'));
-});
 
 // Route 1: Registration (POST /api/daftar)
 app.post('/api/daftar', async (req, res) => {
