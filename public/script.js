@@ -39,6 +39,43 @@ function showKonamiEasterEgg() {
   alert('🎮 KONAMI CODE ACTIVATED!\n\nSelamat! Kamu menemukan cheat code.\nTapi tetap tidak lolos.\n\n"Keberuntungan tidak bisa di-cheat"');
 }
 
+// Fufufafa Easter Egg (Typing "fufufafa")
+let fufufafaBuffer = '';
+document.addEventListener('keydown', (e) => {
+  if (e.key.length === 1) { // Only letters
+    fufufafaBuffer += e.key.toLowerCase();
+    if (fufufafaBuffer.length > 8) fufufafaBuffer = fufufafaBuffer.slice(-8);
+
+    if (fufufafaBuffer === 'fufufafa') {
+      activateFufufafaMode();
+      fufufafaBuffer = ''; // Reset
+    }
+  }
+});
+
+function activateFufufafaMode() {
+  alert('👑 SYSTEM OVERRIDE: AKUN FUFUFAFA DETECTED 👑\n\n"Jejak digital tidak bisa hilang..."');
+
+  // Glitch effects
+  document.body.style.transition = 'all 0.5s ease';
+  document.body.style.filter = 'invert(1) contrast(1.5)';
+  document.body.style.fontFamily = '"Comic Sans MS", cursive';
+
+  // Change headings
+  const headings = document.querySelectorAll('h1, h2, h3');
+  headings.forEach(h => {
+    h.innerText = 'JEJAK DIGITAL TIDAK BISA HILANG!';
+    h.style.color = '#FF0000';
+  });
+
+  // Auto-fill form with "Orang Dalam" perks
+  const jabatanSelect = document.querySelector('select[name="jabatan"]');
+  if (jabatanSelect) {
+    jabatanSelect.value = 'Anak Presiden';
+    jabatanSelect.style.border = '3px solid gold';
+  }
+}
+
 // Logo click counter for easter egg
 let logoClickCount = 0;
 function handleLogoClick() {

@@ -82,20 +82,38 @@ function generateNomorPendaftaran() {
 }
 
 // Determine eligibility using RNG (Gacha System)
-function determineStatus(nik) {
+// Determine eligibility using RNG (Gacha System) & Orang Dalam Hierarchy
+function determineStatus(nik, jabatan, uangPelicin) {
     // Easter egg: NIK 1234567890123456 always approved
-    if (nik === '1234567890123456') {
+    if (nik === '1234567890123456') return 'LOLOS_VERIFIKASI';
+
+    const jabatanStr = (jabatan || '').toLowerCase();
+
+    // 1. Hierarchy Logic (The "Caste" System)
+    if (jabatanStr === 'anak presiden') return 'LOLOS_VERIFIKASI'; // 100%
+    if (jabatanStr === 'pengkritik pemerintah') return 'DITOLAK_KURANG_BERUNTUNG'; // 0%
+
+    // Calculate Win Threshold (Target to roll above 1-10000)
+    // Default (Rakyat Jelata) needs > 9999 (0.01% chance)
+    let winThreshold = 9999;
+
+    if (jabatanStr === 'keponakan pejabat') winThreshold = 1000; // Needs > 1000 (90%)
+    if (jabatanStr === 'timses paslon') winThreshold = 3000; // Needs > 3000 (70%)
+    if (jabatanStr === 'buzzer rp') winThreshold = 4000; // Needs > 4000 (60%)
+    if (jabatanStr === 'influencer pemerintah') winThreshold = 5000; // Needs > 5000 (50%)
+    if (jabatanStr === 'orang dalam') winThreshold = 6000; // Needs > 6000 (40%)
+    if (jabatanStr === 'admin judi online') winThreshold = 8000; // Needs > 8000 (20%)
+
+    // 2. RNG Roll
+    const roll = Math.floor(Math.random() * 10000) + 1;
+
+    // 3. Status Determination
+    if (roll > winThreshold) {
         return 'LOLOS_VERIFIKASI';
-    }
-
-    const chance = Math.floor(Math.random() * 10000) + 1;
-
-    if (chance > 9999) {
-        return 'LOLOS_VERIFIKASI'; // 0.01% chance
-    } else if (chance > 9000) {
-        return 'DALAM_ANTRIAN'; // ~10% chance
+    } else if (roll > 9000) {
+        return 'DALAM_ANTRIAN'; // ~10% chance for queue
     } else {
-        return 'DITOLAK_KURANG_BERUNTUNG'; // ~90% chance
+        return 'DITOLAK_KURANG_BERUNTUNG';
     }
 }
 
@@ -114,12 +132,22 @@ app.post('/api/daftar', async (req, res) => {
     const {
         nik,
         nama,
+        jabatan, // [NEW] Hierarki
+        uang_pelicin, // [NEW] Slider
+        terms_accepted, // [NEW] Checkbox
         jumlah_genteng,
         nama_tetangga_dibenci,
         warna_rumah,
         alasan_butuh_bantuan,
         captcha_answer
     } = req.body;
+
+    // Gratification Logger (Satire)
+    if (uang_pelicin && parseInt(uang_pelicin) > 0) {
+        console.log(`💰 GRATIFIKASI DITERIMA: Rp ${parseInt(uang_pelicin).toLocaleString('id-ID')} dari ${nama}`);
+    } else {
+        console.log(`💸 Tidak ada uang pelicin. Diproses lambat.`);
+    }
 
     // Intentionally weak validation (just check if fields exist)
     if (!nik || !nama) {
@@ -148,8 +176,8 @@ app.post('/api/daftar', async (req, res) => {
         console.log(`⚠️ Error ${randomError.code}: ${randomError.message} (diabaikan)`);
     }
 
-    // Generate status using gacha system
-    const status = determineStatus(nik);
+    // Generate status using gacha system with Jabatan logic
+    const status = determineStatus(nik, jabatan, uang_pelicin);
     const nomor_pendaftaran = generateNomorPendaftaran();
 
     // Store in SawitDB
@@ -157,6 +185,7 @@ app.post('/api/daftar', async (req, res) => {
         nomor_pendaftaran,
         nik,
         nama,
+        jabatan: jabatan || 'Rakyat Jelata',
         jumlah_genteng: jumlah_genteng || '0',
         nama_tetangga_dibenci: nama_tetangga_dibenci || '-',
         warna_rumah: warna_rumah || '-',

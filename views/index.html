@@ -94,6 +94,40 @@
               required>
           </div>
 
+          <!-- Jabatan -->
+          <div class="joko-form-group">
+            <label class="joko-label">
+              <span class="field-icon">👔</span>
+              Jabatan / Status Sosial <span class="required">*</span>
+            </label>
+            <select name="jabatan" class="joko-select" required>
+              <option value="Rakyat Jelata">Rakyat Jelata (Standard)</option>
+              <option value="Admin Judi Online">Admin Judi Online</option>
+              <option value="Mahasiswa Abadi">Mahasiswa Abadi</option>
+              <option value="Buzzer Rp">Buzzer Rp</option>
+              <option value="Influencer Pemerintah">Influencer Pemerintah</option>
+              <option value="Timses Paslon">Timses Paslon</option>
+              <option value="Orang Dalam">Orang Dalam</option>
+              <option value="Keponakan Pejabat">Keponakan Pejabat</option>
+              <option value="Anak Presiden">Anak Presiden</option>
+              <option value="Pengkritik Pemerintah">Pengkritik Pemerintah</option>
+            </select>
+            <p class="joko-helper">Hati-hati, status sosial menentukan nasib Anda</p>
+          </div>
+
+          <!-- Uang Pelicin -->
+          <div class="joko-form-group">
+            <label class="joko-label">
+              <span class="field-icon">💸</span>
+              Uang Pelicin (Sukarela tapi Wajib)
+            </label>
+            <input type="range" name="uang_pelicin" class="joko-range" style="width: 100%;" min="0" max="100000000"
+              step="500000" value="0"
+              oninput="document.getElementById('pelicin-value').innerText = parseInt(this.value).toLocaleString('id-ID')">
+            <p class="joko-helper">Total: Rp <span id="pelicin-value"
+                style="font-weight: bold; color: #059669;">0</span> (Masuk ke kantong pribadi)</p>
+          </div>
+
           <!-- Absurd Question 1: Genteng -->
           <div class="joko-form-group">
             <label class="joko-label">
@@ -154,6 +188,18 @@
             </label>
             <input type="text" name="captcha_answer" class="joko-input" placeholder="Masukkan jawaban">
             <p class="joko-helper">Jawaban apapun diterima, tidak ada validasi</p>
+          </div>
+
+          <!-- Terms -->
+          <div class="joko-form-group">
+            <label
+              style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; padding: 10px; background: #FEF2F2; border: 1px solid #FECACA; border-radius: 4px;">
+              <input type="checkbox" name="terms_accepted" required style="width: 20px; height: 20px; margin-top: 2px;">
+              <span style="font-size: 13px; color: #B91C1C;">
+                <strong>Terms of Surrender:</strong> Saya setuju data saya disebar di Dark Web, dijual ke marketer,
+                digunakan untuk pinjaman online, dan dikirim ke grup WhatsApp keluarga.
+              </span>
+            </label>
           </div>
 
           <!-- Submit Button -->
