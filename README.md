@@ -2,174 +2,95 @@
 
 **KEMENTERIAN KEBERUNTUNGAN REPUBLIK INDONESIA**
 
-> "Keadilan sosial bagi seluruh rakyat Indonesia (yang beruntung)"
+> *"Keadilan sosial bagi seluruh rakyat Indonesia (yang beruntung)"*
 
 ---
 
-## ⚠️ Disclaimer
+## ⚠️ Disclaimer Satir
 
-Ini adalah **proyek satir**. Tidak ada hubungannya dengan program pemerintah resmi. Semua kesamaan dengan sistem nyata adalah kebetulan (atau mungkin tidak).
+Ini adalah **proyek satir**. Tidak ada hubungannya dengan program pemerintah resmi. 
+Aplikasi ini dibuat sebagai kritik sosial terhadap:
+- ❌ Distribusi bantuan yang arbitrary
+- 🐌 Infrastruktur digital yang "senin-kamis"
+- 🔓 Keamanan data yang setipis tisu
+- 🤝 Budaya "Orang Dalam" dan Nepotisme
 
-Proyek ini dibuat untuk kritik sosial mengenai:
-- ❌ Distribusi bantuan sosial yang arbitrary
-- 🐌 Infrastruktur digital pemerintah yang lambat
-- 📋 Persyaratan verifikasi yang absurd
-- 🔓 Kebocoran data pribadi penduduk
+---
+
+## 📜 Latar Belakang
+
+Di sebuah negeri yang makmur nan sejahtera, pemerintah memutuskan bahwa seleksi bantuan sosial menggunakan data empiris terlalu *mainstream*. Maka lahirlah **Kartu Indonesia Hoki (KIH)** — program bantuan pertama di dunia yang berbasis **keberuntungan** dan **koneksi**.
+
+### Filosofi Sistem
+> *"Jika semua orang tidak bisa dapat bantuan, maka lebih adil jika yang dapat adalah yang paling beruntung (atau yang punya paman pejabat)."*
+> — Menteri Keberuntungan (fiktif), 2025
+
+Sistem ini menggunakan teknologi **RNG (Random Number Generator)** yang dipercaya lebih transparan daripada birokrasi manual, karena ketidakjelasannya 100% konsisten.
 
 ---
 
 ## 🌐 Live Demo
 **[https://kartu-indonesia-hoki.vercel.app](https://kartu-indonesia-hoki.vercel.app)**
 
-*Status: � Online (Vercel serverless)*
+*Status: 🟡 Online (Serverless, data reset tiap 1 jam agar jejak hilang)*
 
 ---
 
 ## 🎲 Cara Kerja
 
-1. Pengguna mengisi form dengan pertanyaan absurd (jumlah genteng, tetangga yang dibenci, dll)
-2. Sistem menggunakan RNG (Gacha) untuk menentukan kelayakan
-3. Peluang lolos: **0.01%** (1 dari 10,000)
-4. Data disimpan di SawitDB (tidak aman, tanpa enkripsi)
-5. Data bisa diintip siapa saja di `/admin`
-
-### Statistik Keberuntungan
-
-| Status | Peluang | Keterangan |
-|--------|---------|------------|
-| ✅ LOLOS | 0.01% | Dana cair dalam 100 tahun |
-| ⏰ ANTRIAN | ~10% | Estimasi proses: 47 tahun 3 bulan |
-| ❌ DITOLAK | ~90% | Kurang beruntung, coba lagi tahun depan |
+1. **Pendaftaran**: Rakyat mengisi formulir dengan data "penting" (Nama Tetangga yang Dibenci, Warna Rumah).
+2. **Seleksi Jalur Langit**: Sistem mengecek **Jabatan / Status Sosial** anda.
+3. **RNG (Random Number Generator)**: Jika anda rakyat jelata, nasib anda ditentukan dadu.
+4. **Verifikasi**: Jika (ajaibnya) lolos, wajib membawa **Fotokopi KTP 5 Rangkap** (legalisir kelurahan) untuk klaim.
 
 ---
 
-## 🛠️ Teknologi
+## 👑 Fitur Unggulan (2025 Update)
+
+### 1. Hierarki "Orang Dalam"
+Sistem kami mengenali siapa anda. Peluang lolos disesuaikan secara otomatis:
+
+| Jabatan / Status | Peluang Lolos | Keterangan |
+|------------------|---------------|------------|
+| **Anak Presiden** | **100%** | Auto Win (Data langsung divalidasi) |
+| **Keponakan Pejabat** | 90% | Jalur VIP |
+| **Timses Paslon** | 70% | Jalur Relawan |
+| **Buzzer Rp** | 60% | Jalur Influencer |
+| **Rakyat Jelata** | 0.01% | Semoga beruntung |
+| **Pengkritik Pemerintah** | 0% | Blacklisted Sistem |
+
+### 2. Slider Uang Pelicin 💸
+Ingin memperlancar urusan? Geser slider untuk memberikan "uang kopi" (Sukarela tapi Wajib).
+*(Catatan: Fitur ini hanya mencatat gratifikasi di log server, tidak menambah peluang lolos. Uang hilang, hoki belum tentu datang.)*
+
+### 3. Terms of Surrender 📝
+Untuk mendaftar, anda wajib menyetujui klausul transparansi radikal:
+> *"Saya rela kalo data saya bocor, disebar di Dark Web, dijual ke marketer, digunakan untuk pinjaman online, dan dikirim ke grup WhatsApp keluarga."*
+
+### 4. Mode Fufufafa 🤴
+Ketik **"fufufafa"** di keyboard untuk mengaktifkan *Legacy Mode* dan temukan jejak digital yang tidak bisa hilang.
+
+---
+
+## 🛠️ Informasi Teknis (Untuk Developer)
 
 ### SawitDB - Database Pertanian
+Menggunakan *filesystem-based database* canggih yang menyimpan data dalam format `.sawit`.
+- **Enkripsi**: Tidak ada (Plaintext)
+- **Backup**: "Insyaallah aman"
 
-Database dengan sintaks pertanian yang unik:
-
-```sql
-LAHAN pendaftar           -- CREATE TABLE
-TANAM KE pendaftar BIBIT (...) -- INSERT
-PANEN DARI pendaftar      -- SELECT
-GUSUR DARI pendaftar      -- DELETE
-PUPUK pendaftar           -- Korupsi data random (Easter egg)
-```
-
-### JokoUI - Framework UI "Resmi"
-
-- Warna: Merah (#DC2626), Putih, Abu-abu
-- Style: Boxy, rigid, tanpa rounded corners
-- Font: Arial (karena Inter terlalu modern)
-- Shadow: Harsh 4px offset (no blur)
+### Routes
+| Method | Route | Fungsi |
+|--------|-------|--------|
+| GET | `/admin` | **Panel Data Bocor** (Tanpa password) |
+| GET | `/status` | Cek nasib anda |
+| POST | `/api/daftar` | Submit form (dengan artificial delay 5 detik) |
 
 ---
 
-## 🚀 Installation
-
-```bash
-# Clone repository
-git clone https://github.com/yourusername/kartu-indonesia-hoki.git
-cd kartu-indonesia-hoki
-
-# Install dependencies
-npm install
-
-# Start server
-npm start
-```
-
-Buka browser: `http://localhost:3000`
-
----
-
-## 📁 File Structure
-
-```
-kartu-indonesia-hoki/
-├── server.js              # Express server dengan delay satiris
-├── database.sawit         # SawitDB data file (auto-generated)
-├── lib/
-│   └── sawitdb.js        # SawitDB engine
-├── public/
-│   ├── style.css         # JokoUI styles
-│   └── script.js         # Frontend dengan loading messages
-└── views/
-    ├── index.html        # Form pendaftaran
-    ├── status.html       # Cek status
-    └── admin.html        # Data leak page
-```
-
----
-
-## 📌 Routes
-
-| Method | Route | Deskripsi |
-|--------|-------|-----------|
-| GET | `/` | Form pendaftaran |
-| GET | `/status` | Cek status pendaftaran |
-| GET | `/admin` | Data bocor 🔓 |
-| POST | `/api/daftar` | Submit pendaftaran |
-| GET | `/api/status/:id` | Get status by nomor |
-| GET | `/api/admin/intip` | API data leak |
-| GET | `/api/stats` | Statistik pendaftar |
-
----
-
-## 🎭 Easter Eggs
-
-1. **Konami Code**: Ketik ↑↑↓↓←→←→BA di keyboard
-2. **NIK Ajaib**: Submit dengan NIK `1234567890123456` (always approved)
-3. **Logo Click**: Klik logo 10 kali untuk rahasia
-4. **Console Logs**: Buka DevTools untuk pesan satiris
-5. **PUPUK API**: POST ke `/api/admin/pupuk` untuk korupsi data random
-
----
-
-## 📸 Features
-
-### Form Pendaftaran
-- Pertanyaan absurd (genteng, tetangga dibenci, warna rumah)
-- Fake CAPTCHA (tidak divalidasi)
-- Loading dengan pesan satiris (3-7 detik delay)
-
-### Result Page
-- Animasi loading dengan progress bar stuck di 99%
-- Rotating satirical messages
-- Status dengan styling berbeda (merah/kuning/hijau)
-
-### Admin Page
-- Tanpa autentikasi (by design)
-- Expose semua PII
-- Statistik pendaftar
-
----
-
-## ⚠️ Content Warning
-
-Proyek ini mengandung:
-- Satir politik dan sosial
-- Parodi birokrasi pemerintah
-- Simulasi kebocoran data
-- Humor absurd
-
-**Gunakan dengan bijak untuk kritik konstruktif.**
-
----
-
-## 📜 License
-
-MIT - Gunakan dengan bebas untuk kritik sosial
-
----
-
-## 👥 Contributors
-
-- Rakyat Indonesia yang lelah mengurus berkas
-- Developer yang frustasi dengan sistem digital pemerintah
-
----
+## 👥 Kontributor
+- Rakyat yang lelah mengurus berkas
+- Developer yang trauma dengan fotokopi KTP
 
 **Powered by SawitDB** 🌾 - Infrastruktur Kedaulatan Data
 
