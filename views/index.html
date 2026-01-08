@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kartu Indonesia Hoki (KIH) - Pendaftaran Bantuan Sosial</title>
-  <meta name="description" content="Sistem Pendaftaran Bantuan Sosial Berbasis Keberuntungan - Kementerian Keberuntungan RI">
-  
+  <meta name="description"
+    content="Sistem Pendaftaran Bantuan Sosial Berbasis Keberuntungan - Kementerian Keberuntungan RI">
+
   <!-- JokoUI Styles -->
   <link rel="stylesheet" href="/style.css">
-  
+
   <style>
     /* Page-specific styles */
     .logo-container {
       cursor: pointer;
       user-select: none;
     }
-    
+
     .garuda-icon {
       font-size: 48px;
       margin-right: 15px;
     }
-    
+
     .field-icon {
       font-size: 20px;
       margin-right: 8px;
     }
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <header class="joko-header-bar">
@@ -43,10 +46,24 @@
 
   <!-- Main Content -->
   <main class="container" style="padding-top: 30px; padding-bottom: 40px;">
-    
+
+    <!-- Navigation Menu -->
+    <div class="joko-card mb-4" style="background: #f3f4f6; border-color: #d1d5db;">
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <a href="/" class="joko-button"
+          style="text-decoration: none; background-color: #4B5563; min-width: 100px; text-align: center;">🏠 Daftar</a>
+        <a href="/status" class="joko-button"
+          style="text-decoration: none; background-color: #4B5563; min-width: 120px; text-align: center;">🔍 Cek
+          Status</a>
+        <a href="/admin" class="joko-button"
+          style="text-decoration: none; background-color: #DC2626; min-width: 120px; text-align: center;">🔓 Intip
+          Data</a>
+      </div>
+    </div>
+
     <!-- Alert Banner -->
     <div class="joko-alert joko-alert-warning">
-      <strong>⚠️ PENGUMUMAN:</strong> Sistem ini menggunakan teknologi mutakhir tahun 2009. 
+      <strong>⚠️ PENGUMUMAN:</strong> Sistem ini menggunakan teknologi mutakhir tahun 2009.
       Kelayakan penerima bantuan ditentukan secara adil menggunakan sistem RNG (Random Number Generator).
     </div>
 
@@ -55,7 +72,7 @@
       <div class="joko-card joko-card-red">
         <h2 class="text-center mb-3">📋 FORMULIR PENDAFTARAN</h2>
         <p class="text-center text-muted mb-3">Isi data dengan benar. Mau salah juga boleh, tidak ada validasi.</p>
-        
+
         <form onsubmit="handleFormSubmit(event)">
           <!-- NIK -->
           <div class="joko-form-group">
@@ -63,14 +80,7 @@
               <span class="field-icon">🆔</span>
               NIK (Nomor Induk Kependudukan) <span class="required">*</span>
             </label>
-            <input 
-              type="text" 
-              name="nik" 
-              class="joko-input" 
-              placeholder="3201234567890123"
-              maxlength="16"
-              required
-            >
+            <input type="text" name="nik" class="joko-input" placeholder="3201234567890123" maxlength="16" required>
             <p class="joko-helper">16 digit NIK Anda (tidak divalidasi beneran)</p>
           </div>
 
@@ -80,13 +90,8 @@
               <span class="field-icon">👤</span>
               Nama Lengkap <span class="required">*</span>
             </label>
-            <input 
-              type="text" 
-              name="nama" 
-              class="joko-input" 
-              placeholder="Nama sesuai KTP (tanpa gelar kebangsawanan)"
-              required
-            >
+            <input type="text" name="nama" class="joko-input" placeholder="Nama sesuai KTP (tanpa gelar kebangsawanan)"
+              required>
           </div>
 
           <!-- Absurd Question 1: Genteng -->
@@ -95,13 +100,7 @@
               <span class="field-icon">🏠</span>
               Berapa jumlah genteng rumah Anda?
             </label>
-            <input 
-              type="number" 
-              name="jumlah_genteng" 
-              class="joko-input" 
-              placeholder="Contoh: 847"
-              min="0"
-            >
+            <input type="number" name="jumlah_genteng" class="joko-input" placeholder="Contoh: 847" min="0">
             <p class="joko-helper">Data ini penting untuk verifikasi keberuntungan</p>
           </div>
 
@@ -111,12 +110,8 @@
               <span class="field-icon">😤</span>
               Siapa nama tetangga yang paling Anda benci?
             </label>
-            <input 
-              type="text" 
-              name="nama_tetangga_dibenci" 
-              class="joko-input" 
-              placeholder="Nama tetangga yang menyebalkan"
-            >
+            <input type="text" name="nama_tetangga_dibenci" class="joko-input"
+              placeholder="Nama tetangga yang menyebalkan">
             <p class="joko-helper">Wajib diisi untuk cross-checking data kependudukan</p>
           </div>
 
@@ -146,12 +141,8 @@
               <span class="field-icon">📝</span>
               Alasan Butuh Bantuan
             </label>
-            <textarea 
-              name="alasan_butuh_bantuan" 
-              class="joko-textarea" 
-              placeholder="Jelaskan dengan detail mengapa Anda layak beruntung..."
-              maxlength="500"
-            ></textarea>
+            <textarea name="alasan_butuh_bantuan" class="joko-textarea"
+              placeholder="Jelaskan dengan detail mengapa Anda layak beruntung..." maxlength="500"></textarea>
             <p class="joko-helper">Maksimal 500 karakter (alasan tidak mempengaruhi hasil)</p>
           </div>
 
@@ -161,12 +152,7 @@
               <span class="field-icon">🤖</span>
               Buktikan Anda bukan robot: Berapa 2 + 2?
             </label>
-            <input 
-              type="text" 
-              name="captcha_answer" 
-              class="joko-input" 
-              placeholder="Masukkan jawaban"
-            >
+            <input type="text" name="captcha_answer" class="joko-input" placeholder="Masukkan jawaban">
             <p class="joko-helper">Jawaban apapun diterima, tidak ada validasi</p>
           </div>
 
@@ -207,7 +193,7 @@
       <p>Ditenagai oleh <strong>SawitDB</strong> - Infrastruktur Kedaulatan Data</p>
       <p class="warning-text">⚠️ Data Anda tidak aman dan mungkin bocor sewaktu-waktu</p>
       <p class="mt-1" style="font-size: 11px;">
-        <a href="/admin" style="color: #9CA3AF;">Panel Admin</a> | 
+        <a href="/admin" style="color: #9CA3AF;">Panel Admin</a> |
         <a href="/status" style="color: #9CA3AF;">Cek Status</a>
       </p>
     </div>
@@ -215,4 +201,5 @@
 
   <script src="/script.js"></script>
 </body>
+
 </html>
