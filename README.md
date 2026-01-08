@@ -18,14 +18,14 @@ Proyek ini dibuat untuk kritik sosial mengenai:
 
 ---
 
-## � Live Demo
-**[https://kih-app-693635751904.asia-southeast1.run.app](https://kih-app-693635751904.asia-southeast1.run.app)**
+## 🌐 Live Demo
+**[https://kartu-indonesia-hoki.vercel.app](https://kartu-indonesia-hoki.vercel.app)**
 
-*Status: 🟢 Online (Cloud Run)*
+*Status: � Online (Vercel serverless)*
 
 ---
 
-## �🎲 Cara Kerja
+## 🎲 Cara Kerja
 
 1. Pengguna mengisi form dengan pertanyaan absurd (jumlah genteng, tetangga yang dibenci, dll)
 2. Sistem menggunakan RNG (Gacha) untuk menentukan kelayakan
