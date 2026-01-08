@@ -1,96 +1,103 @@
-# 🏛️ Kartu Indonesia Hoki (KIH)
+# ⛏️ Kartu Indonesia Hoki (KIH)
 
-**KEMENTERIAN KEBERUNTUNGAN REPUBLIK INDONESIA**
+**PROGRAM BAGI-BAGI KONSESI TAMBANG & LAHAN SAWIT**
 
-> *"Keadilan sosial bagi seluruh rakyat Indonesia (yang beruntung)"*
+> *"Ketika sawit disebut sebagai kepentingan nasional, keberlanjutan menjadi opsional."*
 
 ---
 
 ## ⚠️ Disclaimer Satir
 
-Ini adalah **proyek satir**. Tidak ada hubungannya dengan program pemerintah resmi. 
-Aplikasi ini dibuat sebagai kritik sosial terhadap:
-- ❌ Distribusi bantuan yang arbitrary
-- 🐌 Infrastruktur digital yang "senin-kamis"
+Ini adalah **proyek satir** yang mengkritik:
+- ⛏️ Distribusi konsesi tambang & lahan sawit yang arbitrary
+- 🏛️ Hierarki sosial dalam akses sumber daya
 - 🔓 Keamanan data yang setipis tisu
-- 🤝 Budaya "Orang Dalam" dan Nepotisme
+- 💸 Budaya "Uang Pelicin" dan nepotisme
 
----
-
-## 📜 Latar Belakang
-
-Di sebuah negeri yang makmur nan sejahtera, pemerintah memutuskan bahwa seleksi bantuan sosial menggunakan data empiris terlalu *mainstream*. Maka lahirlah **Kartu Indonesia Hoki (KIH)** — program bantuan pertama di dunia yang berbasis **keberuntungan** dan **koneksi**.
-
-### Filosofi Sistem
-> *"Jika semua orang tidak bisa dapat bantuan, maka lebih adil jika yang dapat adalah yang paling beruntung (atau yang punya paman pejabat)."*
-> — Menteri Keberuntungan (fiktif), 2025
-
-Sistem ini menggunakan teknologi **RNG (Random Number Generator)** yang dipercaya lebih transparan daripada birokrasi manual, karena ketidakjelasannya 100% konsisten.
+> *"Ini fiktif. Perasaannya tidak."*
 
 ---
 
 ## 🌐 Live Demo
 **[https://kartu-indonesia-hoki.vercel.app](https://kartu-indonesia-hoki.vercel.app)**
 
-*Status: 🟡 Online (Serverless, data reset tiap 1 jam agar jejak hilang)*
+| Halaman | Fungsi |
+|---------|--------|
+| `/` | Pendaftaran Konsesi |
+| `/lowongan` | Portal 19 Juta Lapangan Kerja |
+| `/status` | Cek Status Permohonan |
+| `/admin` | Panel Data Bocor (Tanpa Password) |
 
 ---
 
-## 🎲 Cara Kerja
+## 👑 Sistem Kasta Nasional
 
-1. **Pendaftaran**: Rakyat mengisi formulir dengan data "penting" (Alasan Butuh Bantuan).
-2. **Seleksi Jalur Langit**: Sistem mengecek **Jabatan / Status Sosial** anda.
-3. **RNG (Random Number Generator)**: Jika anda rakyat jelata, nasib anda ditentukan dadu.
-4. **Verifikasi**: Jika (ajaibnya) lolos, wajib membawa **Fotokopi KTP 5 Rangkap** (legalisir kelurahan) untuk klaim.
+Peluang persetujuan konsesi ditentukan oleh **siapa Anda kenal**:
 
----
+| Jabatan / Status | Peluang Lolos |
+|------------------|---------------|
+| **Anak Presiden / Konglomerasi** | 100% (Prioritas Nasional) |
+| **Direktur Perusahaan Sawit** | ~99% |
+| **Keponakan Pejabat** | 90% |
+| **Ormas / Organisasi Massa** | 85% |
+| **Timses / Relawan Politik** | 70% |
+| **Buzzer Rp** | 60% |
+| **Influencer Pemerintah** | 50% |
+| **Orang Dalam** | 40% |
+| **Petani Plasma / Koperasi** | ~5% (Simbolik) |
+| **Rakyat Jelata** | 0.01% |
+| **Masyarakat Adat / Lokal** | ~0% |
+| **Aktivis Lingkungan** | 0% (Tidak Memenuhi Kriteria Ideologis) |
+| **Pengkritik Pemerintah** | 0% (Tidak Memenuhi Kriteria Ideologis) |
 
-## 👑 Fitur Unggulan (2025 Update)
-
-### 1. Hierarki "Orang Dalam"
-Sistem kami mengenali siapa anda. Peluang lolos disesuaikan secara otomatis:
-
-| Jabatan / Status | Peluang Lolos | Keterangan |
-|------------------|---------------|------------|
-| **Anak Presiden** | **100%** | Auto Win (Data langsung divalidasi) |
-| **Keponakan Pejabat** | 90% | Jalur VIP |
-| **Timses Paslon** | 70% | Jalur Relawan |
-| **Buzzer Rp** | 60% | Jalur Influencer |
-| **Rakyat Jelata** | 0.01% | Semoga beruntung |
-| **Pengkritik Pemerintah** | 0% | Blacklisted Sistem |
-
-### 2. Slider Uang Pelicin 💸
-Ingin memperlancar urusan? Geser slider untuk memberikan "uang kopi" (Sukarela tapi Wajib).
-*(Catatan: Fitur ini hanya mencatat gratifikasi di log server, tidak menambah peluang lolos. Uang hilang, hoki belum tentu datang.)*
-
-### 3. Terms of Surrender 📝
-Untuk mendaftar, anda wajib menyetujui klausul transparansi radikal:
-> *"Saya rela kalo data saya bocor, disebar di Dark Web, dijual ke marketer, digunakan untuk pinjaman online, dan dikirim ke grup WhatsApp keluarga."*
-
-### 4. Mode Fufufafa 🤴
-Ketik **"fufufafa"** di keyboard untuk mengaktifkan *Legacy Mode* dan temukan jejak digital yang tidak bisa hilang.
+> *"Sistem mempertimbangkan keseimbangan antara investasi dan keberlanjutan."*
 
 ---
 
-## 🛠️ Informasi Teknis (Untuk Developer)
+## 🎲 Fitur Unggulan
 
-### SawitDB - Database Pertanian
-Menggunakan *filesystem-based database* canggih yang menyimpan data dalam format `.sawit`.
-- **Enkripsi**: Tidak ada (Plaintext)
+### 1. Slider Uang Pelicin 💸
+- Label: "Sukarela tapi Wajib"
+- Nilai disimpan di database
+- **Tidak mempengaruhi hasil** (performative corruption)
+
+### 2. Terms of Surrender 📝
+> *"Saya menyetujui bahwa data saya dapat bocor, dijual, disalahgunakan, dan tidak akan pernah dihapus."*
+
+### 3. Mode Fufufafa 🤴
+Ketik `fufufafa` untuk menemukan jejak digital yang tidak pernah hilang.
+
+### 4. Portal Lowongan 19 Juta 💼
+- **Buzzer Rp**: 2.500.000 slot (1.700.000 terisi) — BARU!
+- Manufaktur, Sawit, PSN: Semua **PENUH**
+- 9 Juta lowongan: **Belum Terealisasi**
+
+---
+
+## 🛠️ Informasi Teknis
+
+### SawitDB
+Database berbasis filesystem dengan format `.sawit`.
+- **Enkripsi**: Tidak ada
 - **Backup**: "Insyaallah aman"
 
-### Routes
-| Method | Route | Fungsi |
-|--------|-------|--------|
-| GET | `/admin` | **Panel Data Bocor** (Tanpa password) |
-| GET | `/status` | Cek nasib anda |
-| POST | `/api/daftar` | Submit form (dengan artificial delay 5 detik) |
+### Stack
+- Node.js + Express
+- JokoUI (CSS Framework Birokratis)
+- SawitDB (Custom Filesystem DB)
+
+---
+
+## 💰 Anggaran
+
+**Rp 100.000.000.000** (Seratus Miliar Rupiah)
 
 ---
 
 ## 👥 Kontributor
 - Rakyat yang lelah mengurus berkas
 - Developer yang trauma dengan fotokopi KTP
+- Aktivis yang tidak lolos kriteria ideologis
 
 **Powered by SawitDB** 🌾 - Infrastruktur Kedaulatan Data
 
