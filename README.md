@@ -78,13 +78,14 @@ Ketik `fufufafa` untuk menemukan jejak digital yang tidak pernah hilang.
 
 ### SawitDB
 Database berbasis filesystem dengan format `.sawit`.
+- **Repo**: [github.com/WowoEngine/SawitDB](https://github.com/WowoEngine/SawitDB)
 - **Enkripsi**: Tidak ada
 - **Backup**: "Insyaallah aman"
 
 ### Stack
 - Node.js + Express
-- JokoUI (CSS Framework Birokratis)
-- SawitDB (Custom Filesystem DB)
+- [JokoUI](https://github.com/rayasabari/joko-ui) (CSS Framework Birokratis)
+- [SawitDB](https://github.com/WowoEngine/SawitDB) (Custom Filesystem DB)
 
 ---
 
