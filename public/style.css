@@ -45,7 +45,7 @@ body {
   color: var(--hitam-tegas);
   background-color: #D4E6F1;
   background-image: url('/bg-banner.png');
-  background-position: center calc(100% + 50px);
+  background-position: center calc(100% + 120px);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-attachment: fixed;
