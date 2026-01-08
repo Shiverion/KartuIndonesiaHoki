@@ -135,7 +135,7 @@ app.post('/api/daftar', async (req, res) => {
         jabatan, // [NEW] Hierarki
         uang_pelicin, // [NEW] Slider
         terms_accepted, // [NEW] Checkbox
-        jumlah_genteng,
+        // jumlah_genteng removed
         nama_tetangga_dibenci,
         warna_rumah,
         alasan_butuh_bantuan,
@@ -186,7 +186,8 @@ app.post('/api/daftar', async (req, res) => {
         nik,
         nama,
         jabatan: jabatan || 'Rakyat Jelata',
-        jumlah_genteng: jumlah_genteng || '0',
+        jumlah_genteng: '0', // Deprecated but kept for DB schema consistency
+        nama_tetangga_dibenci: nama_tetangga_dibenci || '-',
         nama_tetangga_dibenci: nama_tetangga_dibenci || '-',
         warna_rumah: warna_rumah || '-',
         alasan_butuh_bantuan: alasan_butuh_bantuan || '-',
