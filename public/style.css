@@ -43,8 +43,7 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: var(--hitam-tegas);
-  background: linear-gradient(135deg, rgba(243, 244, 246, 0.92) 0%, rgba(255, 255, 255, 0.92) 100%),
-    url('/bg-sawit.png');
+  background: url('/bg-sawit.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
