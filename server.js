@@ -44,7 +44,7 @@ app.get('/ping', (req, res) => {
     await db.run("LAHAN admin_logs");
 
     // Seed Satirical Data: Fufufafa
-    const pendaftar = await db.select('pendaftar');
+    const pendaftar = await db.findAll('pendaftar');
     const fufufafaExists = pendaftar.find(p => p.nama === 'Fufufafa' || p.nik === 'FUFUFAFA-123');
 
     if (!fufufafaExists) {
