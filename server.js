@@ -129,6 +129,7 @@ function determineStatus(nik, jabatan, uangPelicin) {
     let winThreshold = 9999;
 
     if (jabatanStr === 'keponakan pejabat') winThreshold = 1000; // Needs > 1000 (90%)
+    if (jabatanStr === 'ormas') winThreshold = 1500; // Needs > 1500 (85%) - Ormas high luck!
     if (jabatanStr === 'timses paslon') winThreshold = 3000; // Needs > 3000 (70%)
     if (jabatanStr === 'buzzer rp') winThreshold = 4000; // Needs > 4000 (60%)
     if (jabatanStr === 'influencer pemerintah') winThreshold = 5000; // Needs > 5000 (50%)
