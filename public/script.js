@@ -226,6 +226,7 @@ function showResult(result) {
         <ol style="margin-left: 20px; margin-top: 8px;">
           <li>Tunggu surat fisik via pos (estimasi 5 tahun)</li>
           <li>Urus 47 dokumen persyaratan</li>
+          <li>Wajib membawa fotokopi KTP (5 rangkap, legalisir kelurahan) untuk mengambil hadiah</li>
           <li>Foto bersama Lurah, Camat, Gubernur</li>
           <li>Doa bersama di kantor Kementerian</li>
         </ol>
