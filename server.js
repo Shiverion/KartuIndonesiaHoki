@@ -87,11 +87,12 @@ app.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'admin.html'));
 });
 
-// Satirical response messages
+// Pesan hasil verifikasi (Bahasa Birokratis Dingin)
 const messages = {
-    LOLOS_VERIFIKASI: "Selamat! Anda terpilih. Dana akan cair dalam 100 tahun.",
-    DALAM_ANTRIAN: "Mohon tunggu. Estimasi proses: 47 tahun 3 bulan.",
-    DITOLAK_KURANG_BERUNTUNG: "Maaf, Anda kurang beruntung. Coba lagi tahun depan."
+    LOLOS_VERIFIKASI: "Permohonan Anda telah disetujui sebagai Prioritas Strategis Nasional. Pencairan dana dalam proses antrian.",
+    DALAM_ANTRIAN: "Permohonan Anda sedang dalam evaluasi. Estimasi waktu proses: 47 tahun 3 bulan.",
+    DITOLAK_KURANG_BERUNTUNG: "Permohonan Anda belum menjadi prioritas strategis nasional saat ini.",
+    DITOLAK_IDEOLOGIS: "Permohonan Anda tidak memenuhi kriteria ideologis yang berlaku."
 };
 
 // Generate registration number
@@ -110,9 +111,13 @@ function determineStatus(nik, jabatan, uangPelicin) {
 
     const jabatanStr = (jabatan || '').toLowerCase();
 
-    // 1. Hierarchy Logic (The "Caste" System)
+    // 1. Hierarchy Logic (Sistem Kasta Nasional)
     if (jabatanStr === 'anak presiden') return 'LOLOS_VERIFIKASI'; // 100%
-    if (jabatanStr === 'pengkritik pemerintah') return 'DITOLAK_KURANG_BERUNTUNG'; // 0%
+    if (jabatanStr === 'direktur sawit') return 'LOLOS_VERIFIKASI'; // 99% (Konglomerasi)
+    if (jabatanStr === 'pengkritik pemerintah') return 'DITOLAK_IDEOLOGIS'; // 0%
+    if (jabatanStr === 'aktivis lingkungan') return 'DITOLAK_IDEOLOGIS'; // 0%
+    if (jabatanStr === 'masyarakat adat') return 'DITOLAK_KURANG_BERUNTUNG'; // ~0%
+    if (jabatanStr === 'petani plasma') winThreshold = 9500; // Simbolik (~5%)
 
     // Calculate Win Threshold (Target to roll above 1-10000)
     // Default (Rakyat Jelata) needs > 9999 (0.01% chance)
@@ -123,7 +128,6 @@ function determineStatus(nik, jabatan, uangPelicin) {
     if (jabatanStr === 'buzzer rp') winThreshold = 4000; // Needs > 4000 (60%)
     if (jabatanStr === 'influencer pemerintah') winThreshold = 5000; // Needs > 5000 (50%)
     if (jabatanStr === 'orang dalam') winThreshold = 6000; // Needs > 6000 (40%)
-    if (jabatanStr === 'admin judi online') winThreshold = 8000; // Needs > 8000 (20%)
 
     // 2. RNG Roll
     const roll = Math.floor(Math.random() * 10000) + 1;
