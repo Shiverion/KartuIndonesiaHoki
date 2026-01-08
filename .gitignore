@@ -29,4 +29,6 @@ build/
 # Misc
 *.bak
 *.tmp
-.vercel
+
+# Planning
+plan.md
