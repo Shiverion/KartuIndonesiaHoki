@@ -437,7 +437,7 @@ async function loadAdminData() {
                 <th>No. Pendaftaran</th>
                 <th>NIK</th>
                 <th>Nama</th>
-                <th>Genteng</th>
+                <th>Jabatan</th>
                 <th>Tetangga Dibenci</th>
                 <th>Warna Rumah</th>
                 <th>Status</th>
@@ -457,7 +457,7 @@ async function loadAdminData() {
             <td style="font-family: monospace; font-size: 11px;">${item.nomor_pendaftaran || '-'}</td>
             <td style="font-family: monospace;">${item.nik || '-'}</td>
             <td>${item.nama || '-'}</td>
-            <td>${item.jumlah_genteng || '-'}</td>
+            <td><span style="font-weight: bold; color: #4B5563;">${item.jabatan || 'Rakyat Jelata'}</span></td>
             <td>${item.nama_tetangga_dibenci || '-'}</td>
             <td>${item.warna_rumah || '-'}</td>
             <td><span class="status-badge ${statusClass}">${item.status || '-'}</span></td>
