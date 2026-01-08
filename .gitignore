@@ -2,7 +2,7 @@
 node_modules/
 
 # Database files (keep local data)
-database.sawit
+# # database.sawit (Unignored for Vercel persistence) (Unignored for Vercel persistence)
 
 # Environment files
 .env
