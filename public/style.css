@@ -43,9 +43,11 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: var(--hitam-tegas);
-  background: url('/bg-sawit.png');
-  background-size: cover;
-  background-position: center;
+  background-color: #D4E6F1;
+  background-image: url('/bg-banner.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   background-attachment: fixed;
   min-height: 100vh;
 }
