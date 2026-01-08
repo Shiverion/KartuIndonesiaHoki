@@ -438,8 +438,7 @@ async function loadAdminData() {
                 <th>NIK</th>
                 <th>Nama</th>
                 <th>Jabatan</th>
-                <th>Tetangga Dibenci</th>
-                <th>Warna Rumah</th>
+                <th>Pesan Status</th>
                 <th>Status</th>
                 <th>Waktu</th>
               </tr>
@@ -458,8 +457,7 @@ async function loadAdminData() {
             <td style="font-family: monospace;">${item.nik || '-'}</td>
             <td>${item.nama || '-'}</td>
             <td><span style="font-weight: bold; color: #4B5563;">${item.jabatan || 'Rakyat Jelata'}</span></td>
-            <td>${item.nama_tetangga_dibenci || '-'}</td>
-            <td>${item.warna_rumah || '-'}</td>
+            <td>${item.pesan ? item.pesan.substring(0, 20) + '...' : '-'}</td>
             <td><span class="status-badge ${statusClass}">${item.status || '-'}</span></td>
             <td style="font-size: 11px;">${item.created_at ? new Date(item.created_at).toLocaleString('id-ID') : '-'}</td>
           </tr>

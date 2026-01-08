@@ -38,7 +38,7 @@ Sistem ini menggunakan teknologi **RNG (Random Number Generator)** yang dipercay
 
 ## 🎲 Cara Kerja
 
-1. **Pendaftaran**: Rakyat mengisi formulir dengan data "penting" (Nama Tetangga yang Dibenci, Warna Rumah).
+1. **Pendaftaran**: Rakyat mengisi formulir dengan data "penting" (Alasan Butuh Bantuan).
 2. **Seleksi Jalur Langit**: Sistem mengecek **Jabatan / Status Sosial** anda.
 3. **RNG (Random Number Generator)**: Jika anda rakyat jelata, nasib anda ditentukan dadu.
 4. **Verifikasi**: Jika (ajaibnya) lolos, wajib membawa **Fotokopi KTP 5 Rangkap** (legalisir kelurahan) untuk klaim.

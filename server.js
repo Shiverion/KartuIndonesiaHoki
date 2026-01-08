@@ -136,8 +136,8 @@ app.post('/api/daftar', async (req, res) => {
         uang_pelicin, // [NEW] Slider
         terms_accepted, // [NEW] Checkbox
         // jumlah_genteng removed
-        nama_tetangga_dibenci,
-        warna_rumah,
+        // nama_tetangga_dibenci removed
+        // warna_rumah removed
         alasan_butuh_bantuan,
         captcha_answer
     } = req.body;
@@ -187,9 +187,7 @@ app.post('/api/daftar', async (req, res) => {
         nama,
         jabatan: jabatan || 'Rakyat Jelata',
         jumlah_genteng: '0', // Deprecated but kept for DB schema consistency
-        nama_tetangga_dibenci: nama_tetangga_dibenci || '-',
-        nama_tetangga_dibenci: nama_tetangga_dibenci || '-',
-        warna_rumah: warna_rumah || '-',
+        // warna_rumah: '-',
         alasan_butuh_bantuan: alasan_butuh_bantuan || '-',
         status,
         pesan: messages[status],
