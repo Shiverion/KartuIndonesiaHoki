@@ -87,6 +87,11 @@ app.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'admin.html'));
 });
 
+// Explicit route for lowongan (job listings) page
+app.get('/lowongan', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'lowongan.html'));
+});
+
 // Pesan hasil verifikasi (Bahasa Birokratis Dingin)
 const messages = {
     LOLOS_VERIFIKASI: "Permohonan Anda telah disetujui sebagai Prioritas Strategis Nasional. Pencairan dana dalam proses antrian.",
