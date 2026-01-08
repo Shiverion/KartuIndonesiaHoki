@@ -42,6 +42,27 @@ app.get('/ping', (req, res) => {
 (async () => {
     await db.run("LAHAN pendaftar");
     await db.run("LAHAN admin_logs");
+
+    // Seed Satirical Data: Fufufafa
+    const pendaftar = await db.select('pendaftar');
+    const fufufafaExists = pendaftar.find(p => p.nama === 'Fufufafa' || p.nik === 'FUFUFAFA-123');
+
+    if (!fufufafaExists) {
+        console.log('🌾 Seeding Fufufafa data...');
+        await db.insert('pendaftar', {
+            nomor_pendaftaran: 'KASKUS-2014-OLD',
+            nik: 'FUFUFAFA-123',
+            nama: 'Fufufafa',
+            jabatan: 'Anak Presiden',
+            jumlah_genteng: '9999',
+            nama_tetangga_dibenci: 'Netizen',
+            warna_rumah: 'Istana',
+            alasan_butuh_bantuan: 'Lupa password akun lama',
+            status: 'LOLOS_VERIFIKASI',
+            pesan: 'Jejak digital tidak bisa hilang...',
+            created_at: new Date('2014-10-20').toISOString()
+        });
+    }
 })();
 
 // Explicit route for home page
